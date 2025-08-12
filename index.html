@@ -1,102 +1,35 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <title>Merhaba Sayın Türkan Hanım</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: url('pexels-fatih-guney-337108406-15391803.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
-        }
-        h1 {
-            font-size: 44px;
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 3px #000;
-        }
-        h2 {
-            font-size: 34px;
-            margin-bottom: 40px;
-            text-shadow: 1px 1px 3px #000;
-        }
-        .buttons {
-            position: relative;
-            width: 320px;
-            height: 150px;
-        }
-        .yes-btn {
-            background-color: #4caf50;
-            color: white;
-            font-size: 28px;
-            padding: 24px 60px;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-        .yes-btn:hover {
-            background-color: #388e3c;
-        }
-        .no-btn {
-            position: absolute;
-            background-color: #f44336;
-            color: white;
-            font-size: 14px;
-            padding: 8px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-        #confetti-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 9999;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mesaj</title>
+  <style>
+    html,body{
+      height:100%;
+      margin:0;
+    }
+    body{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#fff;
+    }
+    .msg{
+      color:#c62828;            /* koyu kırmızı */
+      font-weight:700;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      font-size:10vw;          /* responsive büyük yazı */
+      text-align:center;
+      padding:2vw;
+      line-height:1;
+    }
+    @media(min-width:800px){
+      .msg{ font-size:80px; }  /* büyük ekranlarda sabit boyut */
+    }
+  </style>
 </head>
 <body>
-    <canvas id="confetti-canvas"></canvas>
-    <h1>Merhaba Sayın Türkan Hanım</h1>
-    <h2>Yarın görüşüyor muyuz</h2>
-    <div class="buttons">
-        <button class="yes-btn" onclick="showConfetti()">Evet görüşüyoruz</button>
-        <button class="no-btn" id="noBtn">Hayır görüşmüyoruz</button>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <script>
-        const noBtn = document.getElementById('noBtn');
-        const container = document.querySelector('.buttons');
-
-        // Kaçan buton davranışı
-        noBtn.addEventListener('mouseover', () => {
-            const x = Math.random() * (container.clientWidth - noBtn.clientWidth);
-            const y = Math.random() * (container.clientHeight - noBtn.clientHeight);
-            noBtn.style.left = `${x}px`;
-            noBtn.style.top = `${y}px`;
-        });
-
-        // Konfeti efekti
-        function showConfetti() {
-            confetti({
-                particleCount: 150,
-                spread: 80,
-                origin: { y: 0.6 }
-            });
-        }
-    </script>
+  <div class="msg">Sen bir korkaksın</div>
 </body>
 </html>
